@@ -20,7 +20,8 @@ public class Exemplar {
     @Column(name = "disponivel")
     private boolean disponivel;
 
-    @Column(name = "livro_id")
+    @JoinColumn(name = "livro_id")
+    @ManyToOne
     private Livro livro;
 
     @OneToMany(mappedBy = "exemplar")

@@ -37,6 +37,9 @@ public class Livro {
     @ManyToMany
     private List<Categoria> categorias;
 
+    @OneToMany(mappedBy = "livro")
+    private List<Exemplar> exemplares;
+
     public Livro(int id, String titulo, String isbn, OffsetDateTime anoPublicacao, Autor autor) {
         this.id = id;
         this.titulo = titulo;
@@ -117,5 +120,13 @@ public class Livro {
 
     public void setCategorias(List<Categoria> categorias) {
         this.categorias = categorias;
+    }
+
+    public List<Exemplar> getExemplares() {
+        return exemplares;
+    }
+
+    public void setExemplares(List<Exemplar> exemplares) {
+        this.exemplares = exemplares;
     }
 }

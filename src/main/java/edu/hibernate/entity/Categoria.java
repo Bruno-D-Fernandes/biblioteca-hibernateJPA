@@ -15,12 +15,12 @@ public class Categoria {
     private int id;
 
     @Column(name = "nome", nullable = false)
-    private int nome;
+    private String nome;
 
     @ManyToMany(mappedBy = "categorias")
     private List<Livro> livros;
 
-    public Categoria(int id, int nome) {
+    public Categoria(int id, String nome) {
         this.id = id;
         this.nome = nome;
     }
@@ -56,11 +56,11 @@ public class Categoria {
         this.id = id;
     }
 
-    public int getNome() {
+    public String getNome() {
         return nome;
     }
 
-    public void setNome(int nome) {
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
