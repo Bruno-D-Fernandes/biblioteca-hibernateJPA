@@ -2,6 +2,7 @@ package edu.hibernate.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
 import java.util.Objects;
 
 
@@ -19,6 +20,9 @@ public class Usuario {
 
     @Column(name = "email")
     private String email;
+
+    @OneToMany(mappedBy = "usuario")
+    private List<Emprestimo> emprestimos;
 
     public Usuario(int id, String nome, String email) {
         this.id = id;
@@ -72,5 +76,13 @@ public class Usuario {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<Emprestimo> getEmprestimos() {
+        return emprestimos;
+    }
+
+    public void setEmprestimos(List<Emprestimo> emprestimos) {
+        this.emprestimos = emprestimos;
     }
 }

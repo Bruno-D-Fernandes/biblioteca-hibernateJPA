@@ -3,6 +3,7 @@ package edu.hibernate.entity;
 import jakarta.persistence.*;
 import org.hibernate.generator.values.GeneratedValues;
 
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -20,6 +21,8 @@ public class Autor {
     @Column(name = "nacionalidade", length = 100)
     private String nacionalidade;
 
+    @OneToMany(mappedBy = "autor")
+    private List<Livro> livros;
 
     public Autor(int id, String nome, String nacionalidade) {
         this.id = id;
@@ -73,5 +76,13 @@ public class Autor {
 
     public void setNacionalidade(String nacionalidade) {
         this.nacionalidade = nacionalidade;
+    }
+
+    public List<Livro> getLivros() {
+        return livros;
+    }
+
+    public void setLivros(List<Livro> livros) {
+        this.livros = livros;
     }
 }

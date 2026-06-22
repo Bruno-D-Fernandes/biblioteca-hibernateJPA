@@ -4,6 +4,7 @@ package edu.hibernate.entity;
 import jakarta.persistence.*;
 
 import java.time.OffsetDateTime;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -24,12 +25,19 @@ public class Livro {
     @Column(name = "ano_publicacao")
     private OffsetDateTime anoPublicacao;
 
-    // FK
-    @Column(name = "autor_id")
-    private int autor;
+    @JoinColumn(name = "autor_id")
+    @ManyToOne
+    private Autor autor;
 
+    @JoinTable(
+            name = "livro_categoria",
+            joinColumns = @JoinColumn(name = "livro_id"),
+            inverseJoinColumns = @JoinColumn(name = "categoria_id")
+    )
+    @ManyToMany
+    private List<Categoria> categorias;
 
-    public Livro(int id, String titulo, String isbn, OffsetDateTime anoPublicacao, int autor) {
+    public Livro(int id, String titulo, String isbn, OffsetDateTime anoPublicacao, Autor autor) {
         this.id = id;
         this.titulo = titulo;
         this.isbn = isbn;
@@ -95,11 +103,19 @@ public class Livro {
         this.anoPublicacao = anoPublicacao;
     }
 
-    public int getAutor() {
+    public Autor getAutor() {
         return autor;
     }
 
-    public void setAutor(int autor) {
+    public void setAutor(Autor autor) {
         this.autor = autor;
+    }
+
+    public List<Categoria> getCategorias() {
+        return categorias;
+    }
+
+    public void setCategorias(List<Categoria> categorias) {
+        this.categorias = categorias;
     }
 }

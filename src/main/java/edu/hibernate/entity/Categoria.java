@@ -2,6 +2,7 @@ package edu.hibernate.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -15,6 +16,9 @@ public class Categoria {
 
     @Column(name = "nome", nullable = false)
     private int nome;
+
+    @ManyToMany(mappedBy = "categorias")
+    private List<Livro> livros;
 
     public Categoria(int id, int nome) {
         this.id = id;
@@ -58,5 +62,13 @@ public class Categoria {
 
     public void setNome(int nome) {
         this.nome = nome;
+    }
+
+    public List<Livro> getLivros() {
+        return livros;
+    }
+
+    public void setLivros(List<Livro> livros) {
+        this.livros = livros;
     }
 }
