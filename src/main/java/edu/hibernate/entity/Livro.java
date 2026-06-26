@@ -23,7 +23,7 @@ public class Livro {
     private String isbn;
 
     @Column(name = "ano_publicacao")
-    private OffsetDateTime anoPublicacao;
+    private int anoPublicacao;
 
     @JoinColumn(name = "autor_id")
     @ManyToOne
@@ -40,7 +40,7 @@ public class Livro {
     @OneToMany(mappedBy = "livro")
     private List<Exemplar> exemplares;
 
-    public Livro(int id, String titulo, String isbn, OffsetDateTime anoPublicacao, Autor autor) {
+    public Livro(int id, String titulo, String isbn, int anoPublicacao, Autor autor) {
         this.id = id;
         this.titulo = titulo;
         this.isbn = isbn;
@@ -98,11 +98,11 @@ public class Livro {
         this.isbn = isbn;
     }
 
-    public OffsetDateTime getAnoPublicacao() {
+    public int getAnoPublicacao() {
         return anoPublicacao;
     }
 
-    public void setAnoPublicacao(OffsetDateTime anoPublicacao) {
+    public void setAnoPublicacao(int anoPublicacao) {
         this.anoPublicacao = anoPublicacao;
     }
 
