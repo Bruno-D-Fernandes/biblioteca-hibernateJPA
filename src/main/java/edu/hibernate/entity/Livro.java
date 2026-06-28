@@ -2,6 +2,7 @@ package edu.hibernate.entity;
 
 
 import jakarta.persistence.*;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.time.OffsetDateTime;
 import java.util.List;
