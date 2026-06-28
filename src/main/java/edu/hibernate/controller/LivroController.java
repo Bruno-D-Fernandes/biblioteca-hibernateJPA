@@ -1,5 +1,6 @@
 package edu.hibernate.controller;
 
+import edu.hibernate.dto.LivroDTO.LivroResponseDTO;
 import edu.hibernate.entity.Livro;
 import edu.hibernate.repository.LivroRepository;
 import edu.hibernate.service.LivroService;
@@ -25,7 +26,7 @@ public class LivroController {
 
     @GetMapping
     public ResponseEntity getAllDicionarioLivro(){
-        List<Livro> livroList = livroService.getAllLivroCategoriaAutor();
+        List<LivroResponseDTO> livroList = livroService.getAllLivroCategoriaAutor();
         return ResponseEntity.ok(livroList);
     }
 
