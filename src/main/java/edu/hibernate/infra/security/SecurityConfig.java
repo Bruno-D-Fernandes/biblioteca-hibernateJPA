@@ -22,7 +22,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth ->
                         auth.requestMatchers( HttpMethod.GET, "/livros").hasRole("USER")
                                 .anyRequest().authenticated()
-                ).httpBasic(Customizer.withDefaults())
+                ).addFilterBefore()
                 .build();
     }
 
