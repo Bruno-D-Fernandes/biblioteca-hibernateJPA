@@ -27,7 +27,7 @@ public class UsuarioController {
         return ResponseEntity.ok(Map.of("Key", token));
     }
 
-    @PostMapping("register")
+    @PostMapping("/register")
     public ResponseEntity register(@RequestBody RegisterRequestDTO request){
         usuarioService.register(request);
         return ResponseEntity.ok().body(Map.of("sucesso", "Usuário criado com sucesso"));

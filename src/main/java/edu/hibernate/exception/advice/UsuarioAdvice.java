@@ -1,4 +1,4 @@
-package edu.hibernate.Exception.advice;
+package edu.hibernate.exception.advice;
 
 import org.springframework.web.bind.annotation.ControllerAdvice;
 

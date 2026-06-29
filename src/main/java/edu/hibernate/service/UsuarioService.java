@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -36,7 +37,8 @@ public class UsuarioService {
 
     @Transactional
     public void register(RegisterRequestDTO request) {
-        Usuario usuario = new Usuario(request);
+        String encryptedPassword = new BCryptPasswordEncoder().encode(request.password());
+        Usuario usuario = new Usuario(request.username(), request.email(), encryptedPassword);
         usuarioRepository.save(usuario);
     }
 }
