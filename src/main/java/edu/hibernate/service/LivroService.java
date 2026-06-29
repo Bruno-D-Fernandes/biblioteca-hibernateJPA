@@ -27,18 +27,6 @@ public class LivroService {
 
         List<Livro> allLivroCategoriaAutor = livroRepository.getAllLivroCategoriaAutor();
 
-        //Um detached deixa de ser rastreado pelo hibernate, bem "parecido" com o trancient
-        // vai retornar com o título trocado para o usuário, porém no banco nada muda
-        for (Livro livro : allLivroCategoriaAutor) {
-            entityManager.detach(livro);
-            livro.setTitulo("Trocado");
-        }
-
-        for (Livro livro : allLivroCategoriaAutor) {
-            livroRepository.delete(livro);
-        }
-
-
         List<LivroResponseDTO> livroResponseDTOS = allLivroCategoriaAutor.stream().
                 map(LivroResponseDTO::new)
                 .toList();
