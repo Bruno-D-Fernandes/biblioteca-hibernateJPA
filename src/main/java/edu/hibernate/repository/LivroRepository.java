@@ -1,6 +1,6 @@
 package edu.hibernate.repository;
 
-import edu.hibernate.entity.Livro;
+import edu.hibernate.model.Livro;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

@@ -1,7 +1,7 @@
 package edu.hibernate.service;
 
-import edu.hibernate.dto.LivroDTO.LivroResponseDTO;
-import edu.hibernate.entity.Livro;
+import edu.hibernate.dto.livroDTO.LivroResponseDTO;
+import edu.hibernate.model.Livro;
 import edu.hibernate.repository.LivroRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;

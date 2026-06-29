@@ -1,4 +1,4 @@
-package edu.hibernate.service;
+package edu.hibernate.config.security;
 
 import edu.hibernate.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;

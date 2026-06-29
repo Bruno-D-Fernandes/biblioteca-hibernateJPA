@@ -1,9 +1,6 @@
-package edu.hibernate.dto.LivroDTO;
+package edu.hibernate.dto.livroDTO;
 
-import edu.hibernate.entity.Autor;
-import edu.hibernate.entity.Livro;
-
-import java.util.List;
+import edu.hibernate.model.Livro;
 
 public record LivroResponseDTO(
         int id,

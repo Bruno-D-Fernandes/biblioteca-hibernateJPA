@@ -1,4 +1,4 @@
-package edu.hibernate.entity;
+package edu.hibernate.model;
 
 import jakarta.persistence.*;
 

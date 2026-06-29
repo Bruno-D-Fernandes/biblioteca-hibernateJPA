@@ -1,6 +1,6 @@
 package edu.hibernate.repository;
 
-import edu.hibernate.entity.Usuario;
+import edu.hibernate.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,10 +1,8 @@
-package edu.hibernate.entity;
+package edu.hibernate.model;
 
 
 import jakarta.persistence.*;
-import org.springframework.security.core.userdetails.UserDetails;
 
-import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Objects;
 

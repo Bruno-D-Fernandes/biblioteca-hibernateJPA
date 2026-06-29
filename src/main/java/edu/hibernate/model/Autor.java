@@ -1,7 +1,6 @@
-package edu.hibernate.entity;
+package edu.hibernate.model;
 
 import jakarta.persistence.*;
-import org.hibernate.generator.values.GeneratedValues;
 
 import java.util.List;
 import java.util.Objects;

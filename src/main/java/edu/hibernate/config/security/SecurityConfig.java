@@ -1,4 +1,4 @@
-package edu.hibernate.infra.security;
+package edu.hibernate.config.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

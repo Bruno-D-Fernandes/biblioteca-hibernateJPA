@@ -1,12 +1,11 @@
-package edu.hibernate.entity;
+package edu.hibernate.model;
 
+import edu.hibernate.dto.authDTO.RegisterRequestDTO;
 import jakarta.persistence.*;
 import org.jspecify.annotations.Nullable;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import java.util.Collection;
 import java.util.List;
@@ -34,13 +33,19 @@ public class Usuario implements UserDetails {
     @OneToMany(mappedBy = "usuario")
     private List<Emprestimo> emprestimos;
 
-    public Usuario(int id, String nome, String email) {
-        this.id = id;
+    public Usuario(String nome, String email, String password) {
         this.nome = nome;
         this.email = email;
+        this.password = password;
     }
 
     public Usuario() {
+    }
+
+    public Usuario(RegisterRequestDTO request) {
+        this.nome = request.username();
+        this.email = request.email();
+        this.password = request.password();
     }
 
     @Override
